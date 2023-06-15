@@ -3,7 +3,7 @@ version: '3.0'
 
 services:
   webserver:
-    container_name: firstProject-web
+    container_name: Project14062023-web
     build:
       context: .
       dockerfile: Dockerfile.web
@@ -11,11 +11,11 @@ services:
       - .:/app
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - 8080:80
+      - 8081:81
 
 
   app:
-    container_name: firstProject-app
+    container_name: Project14062023-app
     build:
       context: .
       dockerfile: Dockerfile.app

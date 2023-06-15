@@ -4,7 +4,7 @@
 
 //echo "Hello world";
 
-$variable = "John";
+/*$variable = "John";
 
 echo $variable;
 
@@ -77,4 +77,39 @@ echo $form;
 
 echo "<pre>";
 print_r($_GET);
-echo "</pre>";
+echo "</pre>"; */
+
+//ДЗ_3
+$form = "
+<form method='post'>
+<lable>Введите значение n:
+	<input type='number' name='n' required>
+</lable>
+<button type='submit'>Вычислить</button>
+</form>
+";
+
+echo $form;
+
+//проверка отправки формы
+if(isset($_POST['n'])){
+	//получить значение из формы
+	$n = $_POST['n'];
+	//расчет факториала
+	$factorial =1;
+	for($i=1; $i<=$n; $i++){
+		$factorial*=$i;
+	}
+
+	//вывести "Hello world" n раз
+	for($i=0; $i<$n; $i++){
+		echo "Hello world<br> ";
+	}
+
+	//увеличить n в 5 раз
+	$n*=5;
+
+	//результат
+	echo "<p>Факториал числа $n равен $factorial</p>";
+	echo "<p>n увеличенное в 5 раз = $n</p>";
+}
